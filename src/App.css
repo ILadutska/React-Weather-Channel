@@ -1,108 +1,96 @@
 .image-container {
+  position: relative;
+        top: 0;
+        left: 0;
+}
+
+.image-container .background {
+        width:100vw;
+        height: 100vh;
+        background-size: contain;
+      }
+  
+.image-container .cw-logo{
+  position: absolute;
+  top: 30px;
+  left: 30px; 
+}
+
+.cw-logo img {
+    width: 10%; 
+    height: auto;
+}
+
+.search-container {
+  justify-content: center;
+  position: absolute;
   display: flex;
   align-items: center;
-  justify-content: center;
+  opacity: 0.99;
+  z-index: 100;
+  top: 10%;
+  left: 20%;
+  /* Decrease the left value to move it further to the left */
+  width: 60%;
+  /* Adjust the width to make it longer */
+  border-radius: 15px;
+  padding: 10px;
 }
 
-
-.cw-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-container input[type="text"] {
+  padding: 5px;
+  width: 60%;
+  /* Make the input field expand to the full width of the container */
+  height: 2rem;
+  border: none;
+  border-radius: 3px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .cw-logo {
-    animation: cw-spin infinite 20s linear;
-  }
-}
-
-.ccw-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .ccw-logo {
-    animation: ccw-spin infinite 20s linear;
-  }
-}
-
-
-.fast-cw-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .fast-cw-logo {
-    animation: cw-spin infinite 3s linear;
-  }
-}
-
-.fast-ccw-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .fast-ccw-logo {
-    animation: ccw-spin infinite 3s linear;
-  }
-}
-
-
-.App-kramer {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-kramer {
-    animation: 4s linear 1s infinite alternate left-right;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.search-container button {
+  padding: 5px 15px;
+  background-color: #435372;
   color: white;
+  border: none;
+  cursor: pointer;
+  height: 43px;
+  border-radius: 3px;
 }
 
-.App-link {
+.search-container button:hover {
+  background-color: #333;
+}
+
+.containerTime h6 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 200;
+
+}
+
+.containerDay h6 {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 200;
+
+}
+
+.containerDate h6 {
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 200;
+
+}
+
+/*.App-link {
   color: #61dafb;
-}
+}*/
 
-@keyframes cw-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes ccw-spin {
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes left-right {
-  from {
-    transform: translate(-34vw);
-  }
-
-  to {
-    transform: translate(34vw);
-  }
-}

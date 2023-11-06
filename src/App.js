@@ -1,18 +1,31 @@
-import logo from './logo.png';
-import kramer from './kramer-worship.gif'
+import logo from './logodesigns.png';
+import background from './mountains.jpg'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <div className="image-container">
-          <img src={logo} className="cw-logo" alt="logo" />
-          <img src={logo} className="fast-ccw-logo" alt="logo" />
-          <img src={logo} className="fast-cw-logo" alt="logo" />
-          <img src={logo} className="ccw-logo" alt="logo" />
+        {<img src={background} className="background" alt="mountains"/>}
+        {<img src={logo} className="cw-logo" alt="logo" />}
         </div>
-        <p>
+        <div class="search-container">
+        <input type="text" placeholder="Search..."></input>
+        <button type="submit">Search</button>
+    </div>
+    <div class="containerTime">
+        <h6 id="currentTime"></h6>
+    </div>
+    <div class="containerDay">
+        <h6 id="currentDay"></h6>
+    </div>
+    <div class="containerDate">
+        <h6 id="currentDate"></h6>
+    </div>
+    <script src="script.js"></script>
+          
+
+        {/* <p>
           Cool Stuff
         </p>
         <a
@@ -22,9 +35,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
-        <img src={kramer} className="App-kramer" alt="kramer" />
-      </header>
+        </a> */}
     </div>
   );
 }
