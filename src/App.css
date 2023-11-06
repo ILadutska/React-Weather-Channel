@@ -1,15 +1,64 @@
-.App {
-  text-align: center;
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.App-logo {
+
+.cw-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .cw-logo {
+    animation: cw-spin infinite 20s linear;
+  }
+}
+
+.ccw-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ccw-logo {
+    animation: ccw-spin infinite 20s linear;
+  }
+}
+
+
+.fast-cw-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fast-cw-logo {
+    animation: cw-spin infinite 3s linear;
+  }
+}
+
+.fast-ccw-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fast-ccw-logo {
+    animation: ccw-spin infinite 3s linear;
+  }
+}
+
+
+.App-kramer {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-kramer {
+    animation: 4s linear 1s infinite alternate left-right;
   }
 }
 
@@ -28,11 +77,32 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes cw-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes ccw-spin {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes left-right {
+  from {
+    transform: translate(-34vw);
+  }
+
+  to {
+    transform: translate(34vw);
   }
 }
