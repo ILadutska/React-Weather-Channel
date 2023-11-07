@@ -60,37 +60,39 @@
   background-color: #333;
 }
 
-.containerTime h6 {
+.DateTimeDay{
   position: absolute;
   top: -10px;
   right: 30px;
   color: #fff;
   font-size: 22px;
   font-weight: 200;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: normal;
 
 }
 
-.containerDay h6 {
+/*.containerDay{
   position: absolute;
   top: 30px;
   right: 30px;
-  color: #fff;
+  color: #c54949;
   font-size: 22px;
   font-weight: 200;
 
 }
 
-.containerDate h6 {
+.containerDate{
   position: absolute;
   top: 70px;
   right: 30px;
-  color: #fff;
+  color: #b72222;
   font-size: 22px;
   font-weight: 200;
 
 }
 
-/*.App-link {
+.App-link {
   color: #61dafb;
 }*/
 
