@@ -62,8 +62,8 @@
 
 .DateTimeDay{
   position: absolute;
-  top: -10px;
-  right: 30px;
+  top: -1px;
+  right: 20px;
   color: #fff;
   font-size: 22px;
   font-weight: 200;
@@ -72,27 +72,59 @@
 
 }
 
-/*.containerDay{
+.taskbar{
   position: absolute;
-  top: 30px;
-  right: 30px;
-  color: #c54949;
-  font-size: 22px;
-  font-weight: 200;
-
+  left: 10%;
+  top: 30%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.containerDate{
-  position: absolute;
-  top: 70px;
-  right: 30px;
-  color: #b72222;
-  font-size: 22px;
-  font-weight: 200;
-
+.taskbar nav a {
+  display: block;
+  padding: 0.5rem 0.5rem;
+  /* Adjust the padding to make it smaller */
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-link {
+
+.taskbar nav a:hover,
+.taskbar nav a:focus {
+  background-color: #fff;
+  color: #333;
+  text-decoration: underline;
+}
+
+/* CSS for the taskbar */
+.taskbar ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.taskbar ul li {
+  display: inline;
+}
+
+.taskbar nav ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.taskbar nav li {
+  margin: 0 2rem;
+  /* Adjust the spacing between items */
+}
+
+.taskbar nav a {
+  padding: 0.25rem 0.5rem;
+  /* Adjust the padding to make it smaller */
+}
+
+/*.App-link {
   color: #61dafb;
 }*/
 

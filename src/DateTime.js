@@ -7,16 +7,16 @@ export const DateTime = () => {
     useEffect(() => {
         var timer = setInterval(()=>setDate(new Date()), 1000 )
         return function cleanup() {
-            clearInterval(timer)
+        clearInterval(timer)
         }
-    
+        
     });
-
+    
     return(
         <div>
-            <p> Time : {date.toLocaleTimeString()}</p>
-            <p> Date : {date.toLocaleDateString()}</p>
-            <p>Day  : {date.toLocaleDateString('en-US', { weekday: 'long' })}</p>
+            <p>{date.toLocaleTimeString()}</p>
+            <p>{date.toLocaleDateString('en-US', {month: '2-digit', day: '2-digit',year: 'numeric'})}</p>
+            <p>{date.toLocaleDateString('en-US', { weekday: 'long' })}</p>
 
         </div>
     )

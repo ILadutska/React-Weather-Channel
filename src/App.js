@@ -17,9 +17,19 @@ function App() {
         <div className="search-container">
         <input type="text" placeholder="Search..."></input>
         <button type="submit">Search</button></div>
-        
-        
-    </div>
+        <div class="taskbar">
+                <nav>
+                    <ul>
+                        <li><a href="https://www.bbc.com/weather">Home</a></li>
+                        <li><a href="one.html">Local News</a></li>
+                        <li><a href="two.html">Historical Data</a></li>
+                        <li><a href="two.html">Daily Advisory</a></li>
+                        <li><a href="two.html">About Us</a></li>
+                        <li><a href="two.html">Link to API</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
   );
 }
 
