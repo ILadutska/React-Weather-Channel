@@ -3,15 +3,12 @@
   padding: 0
 }
 
-
-
 .navbar {
   position: flex;
   font-family: 'Times New Roman', Times, serif;
   width: 100%;
   height: calc(100vh - 50vh)
 }
-
 
 .navbar a {
   display: block;
@@ -22,7 +19,6 @@
   font-size: 1.1rem;
   transition: background-color 0.3s, color 0.3s;
 }
-
 
 .navbar a:hover,
 .navbar a:focus {

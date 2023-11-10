@@ -5,12 +5,12 @@ function Navbar() {
 	return (
 		<div className="navbar">
 			<ul className="navbar">
-				<li><Link to="/">Home</Link></li>
-				<li><Link to="/news">Local News</Link></li>
-				<li><a href="/data">Historical Data</a></li>
-				<li><Link to="/advisory">Daily Advisory</Link></li>
-				<li><a href="/about">About us</a></li>
-				<li><a href="/API">Link to API</a></li>
+				<li><Link to="/React-Weather-Channel">Home</Link></li>
+				<li><Link to="/React-Weather-Channel/news">Local News</Link></li>
+				<li><Link to="/React-Weather-Channel/data">Historical Data</Link></li>
+				<li><Link to="/React-Weather-Channel/advisory">Daily Advisory</Link></li>
+				<li><Link to="/React-Weather-Channel/about">About us</Link></li>
+				<li><Link to="/React-Weather-Channel/API">Link to API</Link></li>
 			</ul>
 		</div>
 	)

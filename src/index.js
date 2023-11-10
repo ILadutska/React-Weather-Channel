@@ -11,11 +11,11 @@ import AboutPage from './pages/AboutPage';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/React-Weather-Channel",
     element: <App />,
   },
   {
-    path: "about",
+    path: "/React-Weather-Channel/about",
     element: <AboutPage />,
   },
 ]);
