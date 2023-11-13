@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from '../logodesigns.png';
-import background from '../AboutPage.png';
-import './AboutPage.css';
+import background from '../daily_advisory_bg.jpg';
+import './DailyAdvisory.css';
 import DateTime from '../DateTime.js';
 import Navbar from '../components/Navbar.js';
 
-function AboutPage() {
+function DailyAdvisory() {
 
 	const homeStyle = {
 		backgroundImage: `url(${background})`,
@@ -38,5 +38,5 @@ function AboutPage() {
 	);
 }
 
-export default AboutPage;
+export default DailyAdvisory;
 
