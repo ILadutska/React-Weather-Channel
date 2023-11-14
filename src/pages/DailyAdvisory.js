@@ -29,7 +29,7 @@ function DailyAdvisory() {
 
 				<div className="image-container">
 					<div className="DateTimeDay"><DateTime></DateTime></div>
-
+                    {<img className = "background"/>}
 					{<img src={logo} className="logo" alt="logo" />}
 
 				</div>
