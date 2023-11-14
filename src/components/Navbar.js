@@ -10,7 +10,7 @@ function Navbar() {
 				<li><Link to="/React-Weather-Channel/data">Historical Data</Link></li>
 				<li><Link to="/React-Weather-Channel/advisory">Daily Advisory</Link></li>
 				<li><Link to="/React-Weather-Channel/about">About us</Link></li>
-				<li><Link to="/React-Weather-Channel/API">Link to API</Link></li>
+				<li><Link to="https://www.weather.gov/documentation/services-web-api">Link to API</Link></li>
 			</ul>
 		</div>
 	)

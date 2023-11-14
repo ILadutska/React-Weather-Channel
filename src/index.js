@@ -8,15 +8,22 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import AboutPage from './pages/AboutPage';
+import DailyAdvisory from './pages/DailyAdvisory';
 
 const router = createBrowserRouter([
   {
     path: "/React-Weather-Channel",
     element: <App />,
   },
+
   {
     path: "/React-Weather-Channel/about",
     element: <AboutPage />,
+  },
+
+  {
+    path: "/React-Weather-Channel/advisory",
+    element: <DailyAdvisory />,
   },
 ]);
 
