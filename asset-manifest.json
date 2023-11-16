@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/React-Weather-Channel/static/css/main.7a53c4dc.css",
-    "main.js": "/React-Weather-Channel/static/js/main.6393e07e.js",
+    "main.css": "/React-Weather-Channel/static/css/main.9bbcd6cc.css",
+    "main.js": "/React-Weather-Channel/static/js/main.b4fb3dc5.js",
     "static/js/787.68ee4d49.chunk.js": "/React-Weather-Channel/static/js/787.68ee4d49.chunk.js",
+    "static/media/cityview.jpg": "/React-Weather-Channel/static/media/cityview.0a432877a68777484e0c.jpg",
     "static/media/mountains.jpg": "/React-Weather-Channel/static/media/mountains.6c0617fa3b0cb572d459.jpg",
+    "static/media/daily_advisory_bg.jpg": "/React-Weather-Channel/static/media/daily_advisory_bg.038f5b08e3a0ef818e09.jpg",
+    "static/media/AboutPage.png": "/React-Weather-Channel/static/media/AboutPage.63d797520e6fede2a002.png",
     "index.html": "/React-Weather-Channel/index.html",
-    "main.7a53c4dc.css.map": "/React-Weather-Channel/static/css/main.7a53c4dc.css.map",
-    "main.6393e07e.js.map": "/React-Weather-Channel/static/js/main.6393e07e.js.map",
+    "main.9bbcd6cc.css.map": "/React-Weather-Channel/static/css/main.9bbcd6cc.css.map",
+    "main.b4fb3dc5.js.map": "/React-Weather-Channel/static/js/main.b4fb3dc5.js.map",
     "787.68ee4d49.chunk.js.map": "/React-Weather-Channel/static/js/787.68ee4d49.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a53c4dc.css",
-    "static/js/main.6393e07e.js"
+    "static/css/main.9bbcd6cc.css",
+    "static/js/main.b4fb3dc5.js"
   ]
 }
