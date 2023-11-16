@@ -1,82 +1,83 @@
-.background{
-    position: absolute;
-    object-fit: contain;
-    height: '100vh';
-    width: '100vw';
-    background-repeat: no-repeat;
-    overflow: hidden;}
-  
-  .navbar {
-    position: flex;
-    font-family: 'Times New Roman', Times, serif;
-    width: 100%;
-    height: calc(90vh - 50vh)
-  }
-  
-  .navbar a {
-    display: block;
-    padding: 0.5rem 0.5rem;
-    /* Adjust the padding to make it smaller */
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.1rem;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .navbar a:hover,
-  .navbar a:focus {
-    background-color: #fff;
-    color: #333;
-    text-decoration: underline;
-  }
-  
-  /* CSS for the taskbar */
-  .navbar ul {
-    list-style-type: none;
-    padding: 0px;
-  }
-  
-  .navbar ul li {
-    display: inline;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-  }
-  
-  .navbar li {
-    margin: 0 2rem;
-    /* Adjust the spacing between items */
-  }
-  
-  .navbar a {
-    padding: 0.25rem 0.5rem;
-    /* Adjust the padding to make it smaller */
-  }
-  
-  .logo img {
-    width: 10%;
-    height: auto;
-  }
-  
-  .image-container .logo {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-  }
-  
-  
-  .DateTimeDay {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #fff;
-    font-size: 22px;
-    font-weight: 200;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: normal;
-  
-  }
+.background {
+  position: absolute;
+  object-fit: contain;
+  height: '100vh';
+  width: '100vw';
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.navbar {
+  position: flex;
+  font-family: 'Times New Roman', Times, serif;
+  width: 100%;
+  height: calc(90vh - 50vh)
+}
+
+.navbar a {
+  display: block;
+  padding: 0.5rem 0.5rem;
+  /* Adjust the padding to make it smaller */
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  background-color: #fff;
+  color: #333;
+  text-decoration: underline;
+}
+
+/* CSS for the taskbar */
+.navbar ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 2rem;
+  /* Adjust the spacing between items */
+}
+
+.navbar a {
+  padding: 0.25rem 0.5rem;
+  /* Adjust the padding to make it smaller */
+}
+
+.logo img {
+  width: 10%;
+  height: auto;
+}
+
+.image-container .logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+
+.DateTimeDay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 200;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: normal;
+
+}

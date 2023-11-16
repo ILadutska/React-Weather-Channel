@@ -66,44 +66,46 @@ function App() {
 
   return (
     <div style={homeStyle}>
-      <div className="App">
-        <Navbar></Navbar>
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search..."
-            onChange={e => setCity(e.target.value)}
-            value={city}
-            onKeyPress={e => {
-              if (e.key === 'Enter') {
-                fetchWeatherData(latitude, longitude);
-              }
-            }}
-          ></input>
+      <Navbar></Navbar>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={e => setCity(e.target.value)}
+          value={city}
+          onKeyPress={e => {
+            if (e.key === 'Enter') {
+              fetchWeatherData(latitude, longitude);
+            }
+          }}
+        ></input>
 
-          <button type="submit">Search</button></div>
+        <button type="submit">Search</button></div>
 
-        <div className="image-container">
-          <div className="DateTimeDay"><DateTime></DateTime></div>
-          <p>Lat: {latitude}</p>
-          <p>Lon: {longitude}</p>
-          <p>City: {city}</p>
-          <p>Temp now: {weatherData.length > 1 ? weatherData[0].temperature : 'Loading...'}</p>
-          <p>Temp in 6 hours: {weatherData.length > 1 ? weatherData[6].temperature : 'Loading...'}</p>
-          <p>Temp in 12 hours: {weatherData.length > 1 ? weatherData[12].temperature : 'Loading...'}</p>
-          <p>Temp in 18 hours: {weatherData.length > 1 ? weatherData[18].temperature : 'Loading...'}</p>
-          <p>Temp in 24 hours: {weatherData.length > 1 ? weatherData[24].temperature : 'Loading...'}</p>
-          <p>Temp in 156 hours: {weatherData.length > 1 ? weatherData[155].temperature : 'Loading...'}</p>
-          <p>Wind Speed now: {weatherData.length > 1 ? weatherData[0].windSpeed : 'Loading...'}</p>
-          <p>Wind Speed in 6 hours: {weatherData.length > 1 ? weatherData[6].windSpeed : 'Loading...'}</p>
-          <p>Wind Speed in 12 hours: {weatherData.length > 1 ? weatherData[12].windSpeed : 'Loading...'}</p>
-          <p>Wind Speed in 18 hours: {weatherData.length > 1 ? weatherData[18].windSpeed : 'Loading...'}</p>
-
-          {<img src={logo} className="logo" alt="logo" />}
-
+      <div className="image-container">
+        <div className="DateTimeDay">
+          <DateTime></DateTime>
         </div>
+        {<img src={logo} className="logo" alt="logo" />}
+
+      </div>
+      <div>
+        <p>Lat: {latitude}</p>
+        <p>Lon: {longitude}</p>
+        <p>City: {city}</p>
+        <p>Temp now: {weatherData.length > 1 ? weatherData[0].temperature : 'Loading...'}</p>
+        <p>Temp in 6 hours: {weatherData.length > 1 ? weatherData[6].temperature : 'Loading...'}</p>
+        <p>Temp in 12 hours: {weatherData.length > 1 ? weatherData[12].temperature : 'Loading...'}</p>
+        <p>Temp in 18 hours: {weatherData.length > 1 ? weatherData[18].temperature : 'Loading...'}</p>
+        <p>Temp in 24 hours: {weatherData.length > 1 ? weatherData[24].temperature : 'Loading...'}</p>
+        <p>Temp in 156 hours: {weatherData.length > 1 ? weatherData[155].temperature : 'Loading...'}</p>
+        <p>Wind Speed now: {weatherData.length > 1 ? weatherData[0].windSpeed : 'Loading...'}</p>
+        <p>Wind Speed in 6 hours: {weatherData.length > 1 ? weatherData[6].windSpeed : 'Loading...'}</p>
+        <p>Wind Speed in 12 hours: {weatherData.length > 1 ? weatherData[12].windSpeed : 'Loading...'}</p>
+        <p>Wind Speed in 18 hours: {weatherData.length > 1 ? weatherData[18].windSpeed : 'Loading...'}</p>
       </div>
     </div>
+
   );
 }
 

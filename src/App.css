@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0
 }
@@ -6,10 +6,10 @@
 
 
 .navbar {
-  position: flex;
+  position: fixed;
   font-family: 'Times New Roman', Times, serif;
   width: 100%;
-  height: calc(100vh - 50vh)
+  top: 20%;
 }
 
 .navbar a {
