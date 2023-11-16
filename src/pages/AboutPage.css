@@ -1,0 +1,170 @@
+.background{
+    position: absolute;
+    object-fit: contain;
+    height: '100vh';
+    width: '100vw';
+    background-repeat: no-repeat;
+    overflow: hidden;}
+  
+  .navbar {
+    position: flex;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    height: calc(90vh - 50vh)
+  }
+  
+  .navbar a {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    /* Adjust the padding to make it smaller */
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar a:hover,
+  .navbar a:focus {
+    background-color: #fff;
+    color: #333;
+    text-decoration: underline;
+  }
+  
+  /* CSS for the taskbar */
+  .navbar ul {
+    list-style-type: none;
+    padding: 0px;
+  }
+  
+  .navbar ul li {
+    display: inline;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .navbar li {
+    margin: 0 2rem;
+    /* Adjust the spacing between items */
+  }
+  
+  .navbar a {
+    padding: 0.25rem 0.5rem;
+    /* Adjust the padding to make it smaller */
+  }
+  
+  .logo img {
+    width: 10%;
+    height: auto;
+  }
+  
+  .image-container .logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+  
+  .image-container .group {
+    position: absolute;
+    top: 300px;
+    left: 870px;
+  }
+
+  .DateTimeDaynew{
+    color: white;
+    font-size: 25px;
+    font-weight: 150;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+  }
+  
+  .DateTimeDaynew background-blur{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    backdrop-filter: blur(20px);
+    box-sizing: content-box;
+  }
+
+  .About-Ivan{
+    color: black;
+    font-size: 20px;
+    font-weight: 100;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+  }
+
+  .About-Ivan background-blur{
+    position: absolute;
+    top: 300px;
+    right: 990px;
+    backdrop-filter: blur(30px);
+  }
+
+  .About-Faiza{
+    color: black;
+    font-size: 20px;
+    font-weight: 100;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+  }
+
+  .About-Faiza background-blur{
+    position: absolute;
+    top: 300px;
+    right: 725px;
+    backdrop-filter: blur(30px);
+  }
+
+  .About-Fatima{
+    color: black;
+    font-size: 20px;
+    font-weight: 100;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+  }
+
+  .About-Fatima background-blur{
+    position: absolute;
+    top: 390px;
+    right: 420px;
+    backdrop-filter: blur(30px);
+    box-sizing: content-box;
+    width: 20%;
+  }
+  
+  .About-Nikolina{
+    color: black;
+    font-size: 20px;
+    font-weight: 100;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+  }
+
+  .About-Nikolina background-blur{
+    position: absolute;
+    top: 440px;
+    right: 990px;
+    backdrop-filter: blur(120px);
+  }
+
+  .About-Jenelle{
+    color: black;
+    font-size: 20px;
+    font-weight: 100;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+  }
+
+  .About-Jenelle background-blur{
+    position: absolute;
+    top: 440px;
+    right: 685px;
+    backdrop-filter: blur(30px);
+  }
+
+  
