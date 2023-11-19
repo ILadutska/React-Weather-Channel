@@ -19,68 +19,111 @@ function App() {
     color: 'white',
   };
 
-  const [weatherData, setWeatherData] = useState([{}])
-  const [city, setCity] = useState("")
+  const [isInitialFetchDone, setIsInitialFetchDone] = useState(false);
+  const [userLatitude, setUserLatitude] = useState("");
+  const [userLongitude, setUserLongitude] = useState("");
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
+  const [city, setCity] = useState("")
+  const [userInput, setUserInput] = useState('')
+  const [options, setOptions] = useState([]);
+  const [weatherData, setWeatherData] = useState([{}])
+  const [hourlyData, setHourlyData] = useState([{}])
 
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
         setLatitude(position.coords.latitude);
         setLongitude(position.coords.longitude);
-
-        // Fetch weather data when the component mounts
-        fetchWeatherData(latitude, longitude);
+        setUserLatitude(position.coords.latitude);
+        setUserLongitude(position.coords.longitude);
       });
     } else {
       console.log('Geolocation is not supported by this browser.');
     }
-  }, []); // The empty dependency array ensures that this effect runs once when the component mounts
-
+  }, []);
 
   useEffect(() => {
-    if (latitude !== '' && longitude !== '') {
+    if (!isInitialFetchDone && latitude !== '' && longitude !== '') {
       fetchWeatherData(latitude, longitude);
+      setIsInitialFetchDone(true);
     }
-  }, [latitude, longitude]);
+  }, [latitude, longitude, isInitialFetchDone]);
 
+  const getSearchOption = (value) => {
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${value},,US&limit=5&appid=${process.env.REACT_APP_API_KEY}`)
+      .then((res) => res.json())
+      .then((data) => setOptions(data))
+  }
 
-  const fetchWeatherData = (lat, lon) => {
-    fetch(`https://api.weather.gov/points/${lat},${lon}`)
-      .then((response) => response.json())
+  const onInputChange = (e) => {
+    const value = e.target.value
+    setUserInput(value)
+    if (value === '') return
+    getSearchOption(value)
+  }
+
+  const onOptionSelect = (option) => {
+    setLatitude(option.lat)
+    setLongitude(option.lon)
+    setCity(option.name + ', ' + option.state + ', ' + option.country)
+    fetchWeatherData(option.lat, option.lon)
+  }
+
+  const fetchWeatherData = (latitude, longitude) => {
+    fetch(`https://api.weather.gov/points/${latitude},${longitude}`)
+      .then((res) => res.json())
       .then((data) => {
-        const forecastHourlyUrl = data.properties.forecastHourly;
-
-        // Fetch forecast hourly data
-        return fetch(forecastHourlyUrl);
+        setWeatherData(data);
+        return data;
       })
-      .then((response) => response.json())
-      .then((forecastHourlyData) => {
-        setWeatherData(forecastHourlyData.properties.periods);
+      .then((data) => {
+        if (data && data.properties && data.properties.forecastHourly) {
+          return fetch(data.properties.forecastHourly);
+        } else {
+          throw new Error('No hourly forecast available');
+        }
       })
-      .catch((error) => {
-        console.error('Error fetching forecast hourly data:', error);
-      });
+      .then((res) => res.json())
+      .then((hourlyData) => {
+        setHourlyData(hourlyData.properties);
+        console.log(hourlyData.properties); // Log fetched hourly data
+      })
+      .catch((error) => console.error('Error fetching data:', error));
   };
+
 
   return (
     <div style={homeStyle}>
       <Navbar></Navbar>
       <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search..."
-          onChange={e => setCity(e.target.value)}
-          value={city}
-          onKeyPress={e => {
-            if (e.key === 'Enter') {
-              fetchWeatherData(latitude, longitude);
-            }
-          }}
-        ></input>
+        <div className="search-input">
+          <input
+            type="text"
+            placeholder="Search..."
+            onChange={onInputChange}
+            value={userInput}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                fetchWeatherData(latitude, longitude);
+              }
+            }}
+          />
+          <button type="submit" onClick={() => onOptionSelect(options)}>
+            Search
+          </button>
+        </div>
+        <ul className="options-list">
+          {options.map((option, index) => (
+            <li key={option.name + '-' + index}>
+              <button onClick={() => onOptionSelect(option)}>
+                {option.name + ', ' + option.state + ', ' + option.country}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        <button type="submit">Search</button></div>
 
       <div className="image-container">
         <div className="DateTimeDay">
@@ -90,19 +133,29 @@ function App() {
 
       </div>
       <div>
-        <p>Lat: {latitude}</p>
-        <p>Lon: {longitude}</p>
-        <p>City: {city}</p>
-        <p>Temp now: {weatherData.length > 1 ? weatherData[0].temperature : 'Loading...'}</p>
-        <p>Temp in 6 hours: {weatherData.length > 1 ? weatherData[6].temperature : 'Loading...'}</p>
-        <p>Temp in 12 hours: {weatherData.length > 1 ? weatherData[12].temperature : 'Loading...'}</p>
-        <p>Temp in 18 hours: {weatherData.length > 1 ? weatherData[18].temperature : 'Loading...'}</p>
-        <p>Temp in 24 hours: {weatherData.length > 1 ? weatherData[24].temperature : 'Loading...'}</p>
-        <p>Temp in 156 hours: {weatherData.length > 1 ? weatherData[155].temperature : 'Loading...'}</p>
-        <p>Wind Speed now: {weatherData.length > 1 ? weatherData[0].windSpeed : 'Loading...'}</p>
-        <p>Wind Speed in 6 hours: {weatherData.length > 1 ? weatherData[6].windSpeed : 'Loading...'}</p>
-        <p>Wind Speed in 12 hours: {weatherData.length > 1 ? weatherData[12].windSpeed : 'Loading...'}</p>
-        <p>Wind Speed in 18 hours: {weatherData.length > 1 ? weatherData[18].windSpeed : 'Loading...'}</p>
+
+        {hourlyData && hourlyData.periods && hourlyData.periods.length > 1 ? (
+          <div>
+
+            <p>Lat: {latitude}</p>
+            <p>Lon: {longitude}</p>
+            <p>City: {city}</p>
+            <p>Temp now: {hourlyData.periods[0].temperature}</p>
+            <p>Temp in 6 hours: {hourlyData.periods[6].temperature}</p>
+            <p>Temp in 12 hours: {hourlyData.periods[12].temperature}</p>
+            <p>Temp in 18 hours: {hourlyData.periods[18].temperature}</p>
+            <p>Temp in 24 hours: {hourlyData.periods[24].temperature}</p>
+            <p>Temp in 156 hours: {hourlyData.periods[155].temperature}</p>
+            <p>Wind Speed now: {hourlyData.periods[0].windSpeed}</p>
+            <p>Wind Speed in 6 hours: {hourlyData.periods[6].windSpeed}</p>
+            <p>Wind Speed in 12 hours: {hourlyData.periods[12].windSpeed}</p>
+            <p>Wind Speed in 18 hours: {hourlyData.periods[18].windSpeed}</p>
+
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+
       </div>
     </div>
 

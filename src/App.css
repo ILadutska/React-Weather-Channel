@@ -3,8 +3,6 @@
   padding: 0
 }
 
-
-
 .navbar {
   position: fixed;
   font-family: 'Times New Roman', Times, serif;
@@ -68,31 +66,37 @@
 }
 
 .search-container {
-  justify-content: center;
   position: absolute;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   opacity: 0.99;
   z-index: 100;
   top: 10%;
   left: 20%;
-  /* Decrease the left value to move it further to the left */
   width: 60%;
-  /* Adjust the width to make it longer */
   border-radius: 15px;
   padding: 10px;
 }
 
-.search-container input[type="text"] {
+.search-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.search-input input[type="text"] {
+  flex: 1;
   padding: 5px;
   width: 60%;
-  /* Make the input field expand to the full width of the container */
   height: 2rem;
   border: none;
   border-radius: 3px;
 }
 
-.search-container button {
+.search-input button {
   padding: 5px 15px;
   background-color: #435372;
   color: white;
@@ -102,8 +106,25 @@
   border-radius: 3px;
 }
 
-.search-container button:hover {
-  background-color: #333;
+.options-list {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  flex-direction: column;
+  left: 21%;
+  align-items: left;
+}
+
+.options-list button {
+  padding: 5px 10px;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.options-list button:hover {
+  background-color: #5a6b8f;
 }
 
 .DateTimeDay {
@@ -117,7 +138,3 @@
   font-style: normal;
 
 }
-
-/*.App-link {
-  color: #61dafb;
-}*/
