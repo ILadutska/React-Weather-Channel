@@ -51,7 +51,7 @@ function App() {
   }, [latitude, longitude, isInitialFetchDone]);
 
   const getSearchOption = (value) => {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${value},,US&limit=5&appid=${process.env.REACT_APP_API_KEY}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${value},,US&limit=5&appid=${process.env.REACT_APP_API_KEY}`)
       .then((res) => res.json())
       .then((data) => setOptions(data))
   }
