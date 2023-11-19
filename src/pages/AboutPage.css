@@ -1,0 +1,152 @@
+.background{
+    position: absolute;
+    object-fit: contain;
+    height: '100vh';
+    width: '100vw';
+    background-repeat: no-repeat;
+    overflow: hidden;}
+  
+  .navbar {
+    position: flex;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    height: calc(100vh - 50vh)
+  }
+  
+  .navbar a {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    /* Adjust the padding to make it smaller */
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar a:hover,
+  .navbar a:focus {
+    background-color: #fff;
+    color: #333;
+    text-decoration: underline;
+  }
+  
+  /* CSS for the taskbar */
+  .navbar ul {
+    list-style-type: none;
+    padding: 0px;
+  }
+  
+  .navbar ul li {
+    display: inline;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .navbar li {
+    margin: 0 2rem;
+    /* Adjust the spacing between items */
+  }
+  
+  .navbar a {
+    padding: 0.25rem 0.5rem;
+    /* Adjust the padding to make it smaller */
+  }
+  
+  .logo img {
+    width: 10%;
+    height: auto;
+  }
+  
+  .image-container .logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+  
+  .image-container .group {
+    position: absolute;
+    top: 280px;
+    left: 800px;
+    border: 1.75px solid #fff;
+  }
+
+  .image-container .DateTimeDaynew{
+    color: white;
+    font-size: 21px;
+    font-weight: 100;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+  }
+
+
+  
+  .About-Ivan{
+    color: white;
+    font-size: 20px;
+    font-weight: 50;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    position: absolute;
+    top: 300px;
+    right: 990px;
+    text-align: center;
+  }
+
+  .About-Faiza{
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    position: absolute;
+    top: 300px;
+    right: 610px;
+    text-align: center;
+  }
+
+  .About-Fatima{
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    position: absolute;
+    top: 400px;
+    right: 820px;
+    text-align: center;
+  }
+
+  
+  .About-Nikolina{
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    position: absolute;
+    top: 500px;
+    right: 990px;
+    text-align: center;
+  }
+
+  .About-Jenelle{
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    position: absolute;
+    top: 500px;
+    right: 600px;
+    text-align: center;
+  }
+
+  

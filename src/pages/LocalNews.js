@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../logodesigns.png';
 import background from '../cityview.jpg';
-import './LocalNews.css';
+import '../App.css';
 import DateTime from '../DateTime.js';
 import Navbar from '../components/Navbar.js';
 

@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage';
 import DailyAdvisory from './pages/DailyAdvisory';
 import LocalNews from './pages/LocalNews';
 
+
 const router = createBrowserRouter([
   {
     path: "/React-Weather-Channel",
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
   {
     path: "/React-Weather-Channel/news",
     element: <LocalNews />,
-  }
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

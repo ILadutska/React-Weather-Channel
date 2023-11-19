@@ -1,42 +1,87 @@
 import React from 'react';
 import logo from '../logodesigns.png';
-import background from '../AboutPage.png';
+import background from '../black.jpg';
 import './AboutPage.css';
 import DateTime from '../DateTime.js';
 import Navbar from '../components/Navbar.js';
+import group from '../group.jpg';
 
-function AboutPage() {
+function Testing() {
 
-	const homeStyle = {
-		backgroundImage: `url(${background})`,
-		backgroundSize: 'cover',
-		backgroundRepeat: 'no-repeat',
-		height: '100vh',
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		justifyContent: 'center',
-		color: 'white',
-	};
+    const homeStyle = {
+        backgroundImage: `url(${background})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+    };
 
-	return (
-		<div style={homeStyle}>
-			<div className="App">
-				<Navbar></Navbar>
-				<div className="search-container">
-					<input type="text" placeholder="Search..."></input>
-					<button type="submit">Search</button></div>
+    return (
+        <div style={homeStyle}>
+            <div className="App">
+                
+                <Navbar></Navbar>
 
-				<div className="image-container">
-					<div className="DateTimeDay"><DateTime></DateTime></div>
+                    <div className="image-container">
+                        <div className="DateTimeDaynew">
+                           
+                                <DateTime></DateTime>
+                            
+                        </div>
+                        <div className = "About-Ivan">
+                            
+                                <p>Ivan Ladutska</p>
+                                <p>ialadutska@student.ysu.edu</p>
+                           
+                        </div>
 
-					{<img src={logo} className="logo" alt="logo" />}
+                        <div className = "About-Faiza">
+                            
+                                <p>Faiza Jalees</p>
+                                <p>fjalees01@student.ysu.edu</p>
+                                
+                        </div>
 
-				</div>
-			</div>
-		</div>
-	);
+                        <div className = "About-Fatima">
+                           
+                                <p>Fatima Wasim</p>
+                               
+                                <p>fwasim@student.ysu.edu</p>
+                               
+                           
+                        </div>
+
+                        <div className = "About-Nikolina">
+                            
+                                <p>Nikolina Drobnjak</p>
+                                <p>ndrobnjak@student.ysu.edu</p>
+                               
+                        </div>
+
+                        <div className = "About-Jenelle">
+                            
+                                <p>Jenelle Harrington</p>
+                                <p>jharrington01@student.ysu.edu</p>
+                                
+                            
+                        </div>
+
+                    <div className="search-container">
+                    <input type="text" placeholder="Search..."></input>
+                    <button type="submit">Search</button></div>
+                    {<img className = "background"/>}
+                    {<img src={logo} className="logo" alt="logo" />}
+                    {<img src={group} className="group" alt="group photo" />}
+                    
+
+                </div>
+            </div>
+        </div>
+    );
 }
 
-export default AboutPage;
-
+export default Testing;
