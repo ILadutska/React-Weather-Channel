@@ -10,7 +10,7 @@
     position: flex;
     font-family: 'Times New Roman', Times, serif;
     width: 100%;
-    height: calc(90vh - 50vh)
+    height: calc(100vh - 50vh)
   }
   
   .navbar a {
@@ -70,101 +70,83 @@
   
   .image-container .group {
     position: absolute;
-    top: 300px;
-    left: 870px;
+    top: 280px;
+    left: 800px;
+    border: 1.75px solid #fff;
   }
 
-  .DateTimeDaynew{
+  .image-container .DateTimeDaynew{
     color: white;
-    font-size: 25px;
-    font-weight: 150;
+    font-size: 21px;
+    font-weight: 100;
     font-family: 'Times New Roman', Times, serif;
     font-style: normal;
-  }
-  
-  .DateTimeDaynew background-blur{
     position: absolute;
-    top: 20px;
+    top: 25px;
     right: 20px;
-    backdrop-filter: blur(20px);
-    box-sizing: content-box;
   }
 
+
+  
   .About-Ivan{
-    color: black;
+    color: white;
     font-size: 20px;
-    font-weight: 100;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 50;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
-  }
-
-  .About-Ivan background-blur{
     position: absolute;
     top: 300px;
     right: 990px;
-    backdrop-filter: blur(30px);
+    text-align: center;
   }
 
   .About-Faiza{
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: 100;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
-  }
-
-  .About-Faiza background-blur{
     position: absolute;
     top: 300px;
-    right: 725px;
-    backdrop-filter: blur(30px);
+    right: 610px;
+    text-align: center;
   }
 
   .About-Fatima{
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: 100;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
+    position: absolute;
+    top: 400px;
+    right: 820px;
+    text-align: center;
   }
 
-  .About-Fatima background-blur{
-    position: absolute;
-    top: 390px;
-    right: 420px;
-    backdrop-filter: blur(30px);
-    box-sizing: content-box;
-    width: 20%;
-  }
   
   .About-Nikolina{
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: 100;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
-  }
-
-  .About-Nikolina background-blur{
     position: absolute;
-    top: 440px;
+    top: 500px;
     right: 990px;
-    backdrop-filter: blur(120px);
+    text-align: center;
   }
 
   .About-Jenelle{
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: 100;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
-  }
-
-  .About-Jenelle background-blur{
     position: absolute;
-    top: 440px;
-    right: 685px;
-    backdrop-filter: blur(30px);
+    top: 500px;
+    right: 600px;
+    text-align: center;
   }
 
   
