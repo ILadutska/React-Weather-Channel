@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext, AppProvider } from '../AppContext';
 import logo from '../logodesigns.png';
 import background from '../black.jpg';
 import './AboutPage.css';
@@ -7,6 +8,16 @@ import Navbar from '../components/Navbar.js';
 import group from '../group.jpg';
 
 function Testing() {
+
+    const {
+        onInputChange,
+        userInput,
+        fetchWeatherData,
+        latitude,
+        longitude,
+        onOptionSelect,
+        options
+    } = useContext(AppContext);
 
     const homeStyle = {
         backgroundImage: `url(${background})`,
@@ -22,61 +33,85 @@ function Testing() {
 
     return (
         <div style={homeStyle}>
-            <div className="App">
-                
+            <div>
+
                 <Navbar></Navbar>
 
-                    <div className="image-container">
-                        <div className="DateTimeDaynew">
-                           
-                                <DateTime></DateTime>
-                            
-                        </div>
-                        <div className = "About-Ivan">
-                            
-                                <p>Ivan Ladutska</p>
-                                <p>ialadutska@student.ysu.edu</p>
-                           
-                        </div>
+                <div className="image-container">
+                    <div className="DateTimeDaynew">
 
-                        <div className = "About-Faiza">
-                            
-                                <p>Faiza Jalees</p>
-                                <p>fjalees01@student.ysu.edu</p>
-                                
-                        </div>
+                        <DateTime></DateTime>
 
-                        <div className = "About-Fatima">
-                           
-                                <p>Fatima Wasim</p>
-                               
-                                <p>fwasim@student.ysu.edu</p>
-                               
-                           
-                        </div>
+                    </div>
+                    <div className="About-Ivan">
 
-                        <div className = "About-Nikolina">
-                            
-                                <p>Nikolina Drobnjak</p>
-                                <p>ndrobnjak@student.ysu.edu</p>
-                               
-                        </div>
+                        <p>Ivan Ladutska</p>
+                        <p>ialadutska@student.ysu.edu</p>
 
-                        <div className = "About-Jenelle">
-                            
-                                <p>Jenelle Harrington</p>
-                                <p>jharrington01@student.ysu.edu</p>
-                                
-                            
-                        </div>
+                    </div>
+
+                    <div className="About-Faiza">
+
+                        <p>Faiza Jalees</p>
+                        <p>fjalees01@student.ysu.edu</p>
+
+                    </div>
+
+                    <div className="About-Fatima">
+
+                        <p>Fatima Wasim</p>
+
+                        <p>fwasim@student.ysu.edu</p>
+
+
+                    </div>
+
+                    <div className="About-Nikolina">
+
+                        <p>Nikolina Drobnjak</p>
+                        <p>ndrobnjak@student.ysu.edu</p>
+
+                    </div>
+
+                    <div className="About-Jenelle">
+
+                        <p>Jenelle Harrington</p>
+                        <p>jharrington01@student.ysu.edu</p>
+
+
+                    </div>
 
                     <div className="search-container">
-                    <input type="text" placeholder="Search..."></input>
-                    <button type="submit">Search</button></div>
-                    {<img className = "background"/>}
+                        <div className="search-input">
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                onChange={onInputChange}
+                                value={userInput}
+                                onKeyPress={(e) => {
+                                    if (e.key === 'Enter') {
+                                        fetchWeatherData(latitude, longitude);
+                                    }
+                                }}
+                            />
+                            <button type="submit" onClick={() => onOptionSelect(options)}>
+                                Search
+                            </button>
+                        </div>
+                        <ul className="options-list">
+                            {options.map((option, index) => (
+                                <li key={option.name + '-' + index}>
+                                    <button onClick={() => onOptionSelect(option)}>
+                                        {option.name + ', ' + option.state + ', ' + option.country}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {<img className="background" />}
                     {<img src={logo} className="logo" alt="logo" />}
                     {<img src={group} className="group" alt="group photo" />}
-                    
+
 
                 </div>
             </div>
@@ -84,4 +119,12 @@ function Testing() {
     );
 }
 
-export default Testing;
+function AppWrapper() {
+    return (
+        <AppProvider>
+            <Testing />
+        </AppProvider>
+    );
+}
+
+export default AppWrapper;
