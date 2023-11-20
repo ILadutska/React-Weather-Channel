@@ -21,9 +21,11 @@ function DailyAdvisory() {
 
 	return (
 		<div style={homeStyle}>
+			<Navbar></Navbar>
 			<div className="App">
-				<Navbar></Navbar>
+				
 				<div className="search-container">
+					 
 					<input type="text" placeholder="Search..."></input>
 					<button type="submit">Search</button></div>
 

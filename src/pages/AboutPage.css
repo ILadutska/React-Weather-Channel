@@ -70,8 +70,8 @@
   
   .image-container .group {
     position: absolute;
-    top: 280px;
-    left: 800px;
+    top: 40%;
+    left: 60%;
     border: 1.75px solid #fff;
   }
 
@@ -95,8 +95,8 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
     position: absolute;
-    top: 300px;
-    right: 990px;
+    top: 45%;
+    right: 75%;
     text-align: center;
   }
 
@@ -107,8 +107,8 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
     position: absolute;
-    top: 300px;
-    right: 610px;
+    top: 45%;
+    right: 50%;
     text-align: center;
   }
 
@@ -119,8 +119,8 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
     position: absolute;
-    top: 400px;
-    right: 820px;
+    top: 60%;
+    right: 63%;
     text-align: center;
   }
 
@@ -132,8 +132,8 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
     position: absolute;
-    top: 500px;
-    right: 990px;
+    top: 75%;
+    right: 75%;
     text-align: center;
   }
 
@@ -144,8 +144,8 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: normal;
     position: absolute;
-    top: 500px;
-    right: 600px;
+    top: 75%;
+    right: 48%;
     text-align: center;
   }
 

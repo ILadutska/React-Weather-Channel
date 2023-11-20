@@ -22,9 +22,10 @@ function Testing() {
 
     return (
         <div style={homeStyle}>
+            <Navbar></Navbar>
             <div className="App">
                 
-                <Navbar></Navbar>
+                
 
                     <div className="image-container">
                         <div className="DateTimeDaynew">
