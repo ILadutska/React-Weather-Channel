@@ -21,15 +21,16 @@ function DailyAdvisory() {
 
 	return (
 		<div style={homeStyle}>
+			<Navbar></Navbar>
 			<div className="App">
-				<Navbar></Navbar>
+
 				<div className="search-container">
 					<input type="text" placeholder="Search..."></input>
 					<button type="submit">Search</button></div>
 
 				<div className="image-container">
 					<div className="DateTimeDay"><DateTime></DateTime></div>
-                    {<img className = "background"/>}
+					{<img className="background" />}
 					{<img src={logo} className="logo" alt="logo" />}
 
 				</div>

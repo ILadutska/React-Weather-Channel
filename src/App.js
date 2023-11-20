@@ -133,30 +133,66 @@ function App() {
 
       </div>
       <div>
-
         {hourlyData && hourlyData.periods && hourlyData.periods.length > 1 ? (
-          <div>
-
-            <p>Lat: {latitude}</p>
-            <p>Lon: {longitude}</p>
-            <p>City: {city}</p>
-            <p>Temp now: {hourlyData.periods[0].temperature}</p>
-            <p>Temp in 6 hours: {hourlyData.periods[6].temperature}</p>
-            <p>Temp in 12 hours: {hourlyData.periods[12].temperature}</p>
-            <p>Temp in 18 hours: {hourlyData.periods[18].temperature}</p>
-            <p>Temp in 24 hours: {hourlyData.periods[24].temperature}</p>
-            <p>Temp in 156 hours: {hourlyData.periods[155].temperature}</p>
-            <p>Wind Speed now: {hourlyData.periods[0].windSpeed}</p>
-            <p>Wind Speed in 6 hours: {hourlyData.periods[6].windSpeed}</p>
-            <p>Wind Speed in 12 hours: {hourlyData.periods[12].windSpeed}</p>
-            <p>Wind Speed in 18 hours: {hourlyData.periods[18].windSpeed}</p>
-
+          <div className="weather-info-container">
+            <div className="weather-box">
+              <p>Lat: {latitude}</p>
+            </div>
+            <div className="weather-box">
+              <p>Lon: {longitude}</p>
+            </div>
+            <div className="weather-box">
+              <p>City: {city}</p>
+            </div>
+            <div className="weather-box">
+              <p>Temperature now: {hourlyData.periods[0].temperature}°C</p>
+            </div>
+            <div className="weather-box">
+              <p>Temperature in 6 hours: {hourlyData.periods[6].temperature}°C</p>
+            </div>
+            <div className="weather-box">
+              <p>Temperature in 12 hours: {hourlyData.periods[12].temperature}°C</p>
+            </div>
+            <div className="weather-box">
+              <p>Temperature in 18 hours: {hourlyData.periods[18].temperature}°C</p>
+            </div>
+            <div className="weather-box">
+              <p>Temperature in 24 hours: {hourlyData.periods[24].temperature}°C</p>
+            </div>
+            <div className="weather-box">
+              <p>Temperature in 156 hours: {hourlyData.periods[155].temperature}°C</p>
+            </div>
+            <div className="weather-box">
+              <p>Wind Speed now: {hourlyData.periods[0].windSpeed} m/s</p>
+            </div>
+            <div className="weather-box">
+              <p>Wind Speed in 6 hours: {hourlyData.periods[6].windSpeed} m/s</p>
+            </div>
+            <div className="weather-box">
+              <p>Wind Speed in 12 hours: {hourlyData.periods[12].windSpeed} m/s</p>
+            </div>
+            <div className="weather-box">
+              <p>Wind Speed in 18 hours: {hourlyData.periods[18].windSpeed} m/s</p>
+            </div>
+            <div className="weather-box">
+              <p>Humidity now: {hourlyData.periods[0].humidity}%</p>
+            </div>
+            <div className="weather-box">
+              <p>Humidity in 6 hours: {hourlyData.periods[6].humidity}%</p>
+            </div>
+            <div className="weather-box">
+              <p>Humidity in 12 hours: {hourlyData.periods[12].humidity}%</p>
+            </div>
+            <div className="weather-box">
+              <p>Humidity in 18 hours: {hourlyData.periods[18].humidity}%</p>
+            </div>
+            {/* Add more boxes for other weather information */}
           </div>
         ) : (
           <p>Loading...</p>
         )}
-
       </div>
+
     </div>
 
   );
