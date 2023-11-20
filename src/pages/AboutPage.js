@@ -24,60 +24,58 @@ function Testing() {
         <div style={homeStyle}>
             <Navbar></Navbar>
             <div className="App">
-                
-                
 
-                    <div className="image-container">
-                        <div className="DateTimeDaynew">
-                           
-                                <DateTime></DateTime>
-                            
-                        </div>
-                        <div className = "About-Ivan">
-                            
-                                <p>Ivan Ladutska</p>
-                                <p>ialadutska@student.ysu.edu</p>
-                           
-                        </div>
+                <div className="image-container">
+                    <div className="DateTimeDaynew">
 
-                        <div className = "About-Faiza">
-                            
-                                <p>Faiza Jalees</p>
-                                <p>fjalees01@student.ysu.edu</p>
-                                
-                        </div>
+                        <DateTime></DateTime>
 
-                        <div className = "About-Fatima">
-                           
-                                <p>Fatima Wasim</p>
-                               
-                                <p>fwasim@student.ysu.edu</p>
-                               
-                           
-                        </div>
+                    </div>
+                    <div className="About-Ivan">
 
-                        <div className = "About-Nikolina">
-                            
-                                <p>Nikolina Drobnjak</p>
-                                <p>ndrobnjak@student.ysu.edu</p>
-                               
-                        </div>
+                        <p>Ivan Ladutska</p>
+                        <p>ialadutska@student.ysu.edu</p>
 
-                        <div className = "About-Jenelle">
-                            
-                                <p>Jenelle Harrington</p>
-                                <p>jharrington01@student.ysu.edu</p>
-                                
-                            
-                        </div>
+                    </div>
+
+                    <div className="About-Faiza">
+
+                        <p>Faiza Jalees</p>
+                        <p>fjalees01@student.ysu.edu</p>
+
+                    </div>
+
+                    <div className="About-Fatima">
+
+                        <p>Fatima Wasim</p>
+
+                        <p>fwasim@student.ysu.edu</p>
+
+
+                    </div>
+
+                    <div className="About-Nikolina">
+
+                        <p>Nikolina Drobnjak</p>
+                        <p>ndrobnjak@student.ysu.edu</p>
+
+                    </div>
+
+                    <div className="About-Jenelle">
+
+                        <p>Jenelle Harrington</p>
+                        <p>jharrington01@student.ysu.edu</p>
+
+
+                    </div>
 
                     <div className="search-container">
-                    <input type="text" placeholder="Search..."></input>
-                    <button type="submit">Search</button></div>
-                    {<img className = "background"/>}
+                        <input type="text" placeholder="Search..."></input>
+                        <button type="submit">Search</button></div>
+                    {<img className="background" />}
                     {<img src={logo} className="logo" alt="logo" />}
                     {<img src={group} className="group" alt="group photo" />}
-                    
+
 
                 </div>
             </div>

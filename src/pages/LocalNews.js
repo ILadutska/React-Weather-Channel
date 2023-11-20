@@ -21,11 +21,8 @@ function LocalNews() {
 
     return (
         <div style={homeStyle}>
-             <Navbar></Navbar>
+            <Navbar></Navbar>
             <div className="App">
-
-               
-
                 <div className="image-container">
                     <div className="DateTimeDay">
                         <DateTime></DateTime>

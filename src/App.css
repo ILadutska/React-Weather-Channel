@@ -137,3 +137,17 @@
   font-family: 'Times New Roman', Times, serif;
   font-style: normal;
 }
+
+.weather-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.weather-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
