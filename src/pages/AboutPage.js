@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext, AppProvider } from '../AppContext';
 import logo from '../logodesigns.png';
 import background from '../black.jpg';
 import './AboutPage.css';
@@ -7,6 +8,16 @@ import Navbar from '../components/Navbar.js';
 import group from '../group.jpg';
 
 function Testing() {
+
+    const {
+        onInputChange,
+        userInput,
+        fetchWeatherData,
+        latitude,
+        longitude,
+        onOptionSelect,
+        options
+    } = useContext(AppContext);
 
     const homeStyle = {
         backgroundImage: `url(${background})`,
@@ -70,8 +81,32 @@ function Testing() {
                     </div>
 
                     <div className="search-container">
-                        <input type="text" placeholder="Search..."></input>
-                        <button type="submit">Search</button></div>
+                        <div className="search-input">
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                onChange={onInputChange}
+                                value={userInput}
+                                onKeyPress={(e) => {
+                                    if (e.key === 'Enter') {
+                                        fetchWeatherData(latitude, longitude);
+                                    }
+                                }}
+                            />
+                            <button type="submit" onClick={() => onOptionSelect(options)}>
+                                Search
+                            </button>
+                        </div>
+                        <ul className="options-list">
+                            {options.map((option, index) => (
+                                <li key={option.name + '-' + index}>
+                                    <button onClick={() => onOptionSelect(option)}>
+                                        {option.name + ', ' + option.state + ', ' + option.country}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                     {<img className="background" />}
                     {<img src={logo} className="logo" alt="logo" />}
                     {<img src={group} className="group" alt="group photo" />}
@@ -83,4 +118,12 @@ function Testing() {
     );
 }
 
-export default Testing;
+function AppWrapper() {
+    return (
+        <AppProvider>
+            <Testing />
+        </AppProvider>
+    );
+}
+
+export default AppWrapper;
