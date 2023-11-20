@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 
 function Navbar() {
 	return (
-		<div className="navbar">
-			<ul className="navbar">
+		<div className="navbar-pages">
+			<ul className="navbar-pages">
 				<li><Link to="/React-Weather-Channel">Home</Link></li>
 				<li><Link to="/React-Weather-Channel/news">Local News</Link></li>
 				<ul className = "DaysNavbar">

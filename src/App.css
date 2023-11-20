@@ -3,14 +3,14 @@
   padding: 0
 }
 
-.navbar {
+.navbar-pages {
   position: fixed;
   font-family: 'Times New Roman', Times, serif;
   width: 100%;
   top: 20%;
 }
 
-.navbar a {
+.navbar-pages a {
   display: block;
   padding: 0.5rem 0.5rem;
   /* Adjust the padding to make it smaller */
@@ -20,36 +20,87 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar a:hover,
-.navbar a:focus {
+.navbar-pages a:hover,
+.navbar-pages a:focus {
   background-color: #fff;
   color: #333;
   text-decoration: underline;
 }
 
 /* CSS for the taskbar */
-.navbar ul {
+.navbar-pages ul {
   list-style-type: none;
   padding: 0px;
 }
 
-.navbar ul li {
+.navbar-pages ul li {
   display: inline;
 }
 
-.navbar ul {
+.navbar-pages ul {
   list-style-type: none;
   display: flex;
   justify-content: center;
   padding: 0;
 }
 
-.navbar li {
+.navbar-pages li {
   margin: 0 2rem;
   /* Adjust the spacing between items */
 }
 
-.navbar a {
+.navbar-pages a {
+  padding: 0.25rem 0.5rem;
+  /* Adjust the padding to make it smaller */
+}
+
+.navbar-hours {
+  position: fixed;
+  font-family: 'Times New Roman', Times, serif;
+  width: 100%;
+  top: 25%;
+}
+
+.navbar-hours a {
+  display: block;
+  padding: 0.5rem 0.5rem;
+  /* Adjust the padding to make it smaller */
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-hours a:hover,
+.navbar-hours a:focus {
+  background-color: #fff;
+  color: #333;
+  text-decoration: underline;
+}
+
+/* CSS for the taskbar */
+.navbar-hours ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.navbar-hours ul li {
+  display: inline;
+}
+
+.navbar-hours ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.navbar-hours li {
+  margin: 0 2rem;
+  /* Adjust the spacing between items */
+}
+
+.navbar-hours a {
   padding: 0.25rem 0.5rem;
   /* Adjust the padding to make it smaller */
 }

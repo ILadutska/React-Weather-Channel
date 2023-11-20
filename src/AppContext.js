@@ -45,6 +45,7 @@ export const AppProvider = ({ children }) => {
 		setUserInput(value)
 		if (value === '') return
 		getSearchOption(value)
+		
 	}
 
 	const onOptionSelect = (option) => {

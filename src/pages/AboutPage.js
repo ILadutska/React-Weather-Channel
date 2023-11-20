@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { AppContext, AppProvider } from '../AppContext';
-import logo from '../logodesigns.png';
-import background from '../black.jpg';
+import logo from '../resources/logodesigns.png';
+import background from '../resources/black.jpg';
 import './AboutPage.css';
 import DateTime from '../DateTime.js';
-import Navbar from '../components/Navbar.js';
-import group from '../group.jpg';
+import Navbar from '../components/Navbar-pages.js';
+import group from '../resources/group.jpg';
 
 function Testing() {
 
