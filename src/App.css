@@ -58,7 +58,7 @@
   position: fixed;
   font-family: 'Times New Roman', Times, serif;
   width: 100%;
-  top: 25%;
+  top: 30%;
 }
 
 .navbar-hours a {
@@ -101,6 +101,57 @@
 }
 
 .navbar-hours a {
+  padding: 0.25rem 0.5rem;
+  /* Adjust the padding to make it smaller */
+}
+
+.navbar-days {
+  position: fixed;
+  font-family: 'Times New Roman', Times, serif;
+  width: 100%;
+  top: 25%;
+}
+
+.navbar-days a {
+  display: block;
+  padding: 0.5rem 0.5rem;
+  /* Adjust the padding to make it smaller */
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-days a:hover,
+.navbar-days a:focus {
+  background-color: #fff;
+  color: #333;
+  text-decoration: underline;
+}
+
+/* CSS for the taskbar */
+.navbar-days ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.navbar-days ul li {
+  display: inline;
+}
+
+.navbar-days ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.navbar-days li {
+  margin: 0 2rem;
+  /* Adjust the spacing between items */
+}
+
+.navbar-days a {
   padding: 0.25rem 0.5rem;
   /* Adjust the padding to make it smaller */
 }

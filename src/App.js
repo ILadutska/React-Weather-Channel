@@ -6,7 +6,7 @@ import './App.css';
 import DateTime from './DateTime.js';
 import Navbar from './components/Navbar-pages.js';
 import NavbarHours from './components/Navbar-hours.js';
-
+import NavbarDays from './components/Navbar-days.js';
 
 function App() {
 
@@ -19,15 +19,25 @@ function App() {
     onOptionSelect,
     options,
     hourlyData,
+    dailyData,
     city
   } = useContext(AppContext);
 
-  const [selectedHour, setSelectedHour] = useState(6);
+  const [selectedHour, setSelectedHour] = useState('');
+  const [selectedDay, setSelectedDay] = useState('');
 
   const handleHourSelection = (numVal) =>{
+    setSelectedDay('');
 		console.log('Selected Hour:', numVal);
     setSelectedHour(numVal);
     console.log('Updated: ', selectedHour);
+	};
+
+  const handleDaySelection = (numVal) =>{
+    setSelectedHour('');
+		console.log('Selected Day:', numVal);
+    setSelectedDay(numVal);
+    console.log('Updated: ', selectedDay);
 	};
 
   const homeStyle = {
@@ -45,6 +55,7 @@ function App() {
   return (
     <div style={homeStyle}>
       <Navbar></Navbar>
+      <NavbarDays onDaySelect={handleDaySelection}/>
       <NavbarHours onHourSelect={handleHourSelection}/>
       <div className="search-container">
         <div className="search-input">
@@ -94,20 +105,41 @@ function App() {
             <div className="weather-box">
               <p>City: {city}</p>
             </div>
-            <div className="weather-box">
-              <p>Hour: {selectedHour}</p>
-            </div>
-            <div className="weather-box">
-              <p>Temperature: {hourlyData.periods[selectedHour].temperature}°F</p>
-            </div>
+            {selectedHour !== '' ? (
+              <>
+              <div className="weather-box">
+                <p>Hour: {selectedHour}</p>
+              </div>
+              <div className="weather-box">
+                <p>Temperature: {hourlyData.periods[selectedHour].temperature}°F</p>
+              </div>
 
-            <div className="weather-box">
-              <p>Wind Speed: {hourlyData.periods[selectedHour].windSpeed}</p>
-            </div>
+              <div className="weather-box">
+                <p>Wind Speed: {hourlyData.periods[selectedHour].windSpeed}</p>
+              </div>
 
-            <div className="weather-box">
-              <p>Humidity: {hourlyData.periods[selectedHour].relativeHumidity.value}%</p>
-            </div>
+              <div className="weather-box">
+                <p>Humidity: {hourlyData.periods[selectedHour].relativeHumidity.value}%</p>
+              </div>
+            </>
+            ) : selectedDay !== '' ? (
+              <>
+              <div className="weather-box">
+                <p>Day: {dailyData.periods[selectedDay].name}</p>
+              </div>
+              <div className="weather-box">
+                <p>Temperature: {dailyData.periods[selectedDay].temperature}°F</p>
+              </div>
+
+              <div className="weather-box">
+                <p>Wind Speed: {dailyData.periods[selectedDay].windSpeed}</p>
+              </div>
+
+              <div className="weather-box">
+                <p>Humidity: {dailyData.periods[selectedDay].relativeHumidity.value}%</p>
+              </div>
+            </>
+            ) : null}
            
           </div>
         ) : (

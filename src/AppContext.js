@@ -13,6 +13,7 @@ export const AppProvider = ({ children }) => {
 	const [options, setOptions] = useState([]);
 	const [weatherData, setWeatherData] = useState({});
 	const [hourlyData, setHourlyData] = useState({});
+	const [dailyData, setDailyData] = useState({});
 
 	useEffect(() => {
 		if (navigator.geolocation) {
@@ -62,19 +63,39 @@ export const AppProvider = ({ children }) => {
 				setWeatherData(data);
 				return data;
 			})
-			.then((data) => {
-				if (data && data.properties && data.properties.forecastHourly) {
-					return fetch(data.properties.forecastHourly);
-				} else {
-					throw new Error('No hourly forecast available');
-				}
-			})
-			.then((res) => res.json())
-			.then((hourlyData) => {
-				setHourlyData(hourlyData.properties);
-				console.log(hourlyData.properties); // Log fetched hourly data
-			})
-			.catch((error) => console.error('Error fetching data:', error));
+			.then((data) =>{
+				const fetchHourly = fetch(data.properties.forecastHourly)
+				.then((hourlyData) => {
+					if (data && data.properties && data.properties.forecastHourly) {
+						return fetch(data.properties.forecastHourly);
+					} else {
+						throw new Error('No hourly forecast available');
+					}
+				})
+				.then((res) => res.json())
+				.then((hourlyData) => {
+					setHourlyData(hourlyData.properties);
+					console.log(hourlyData.properties); // Log fetched hourly data
+					return hourlyData.properties;
+				});
+
+				const fetchDaily = fetch(data.properties.forecast)
+				.then((dailyData) => {
+					if (data && data.properties && data.properties.forecast) {
+						return fetch(data.properties.forecast);
+					} else {
+						throw new Error('No daily forecast available');
+					}
+				})
+				.then((res) => res.json())
+				.then((dailyData) => {
+					setDailyData(dailyData.properties);
+					console.log(dailyData.properties); // Log fetched hourly data
+					return dailyData.properties;
+				});
+				return Promise.all([fetchHourly, fetchDaily]);
+		})
+		.catch((error) => console.error('Error fetching data:', error));
 	};
 
 	const contextValues = {
@@ -88,6 +109,7 @@ export const AppProvider = ({ children }) => {
 		options,
 		weatherData,
 		hourlyData,
+		dailyData,
 		setIsInitialFetchDone,
 		setUserLatitude,
 		setUserLongitude,
@@ -102,6 +124,7 @@ export const AppProvider = ({ children }) => {
 		onInputChange,
 		onOptionSelect,
 		fetchWeatherData,
+		setDailyData,
 	};
 
 	return <AppContext.Provider value={contextValues}>{children}</AppContext.Provider>;
