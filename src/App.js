@@ -20,7 +20,8 @@ function App() {
     options,
     hourlyData,
     dailyData,
-    city
+    city,
+    alertData
   } = useContext(AppContext);
 
   const [selectedHour, setSelectedHour] = useState('');

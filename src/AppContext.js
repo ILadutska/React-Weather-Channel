@@ -14,6 +14,7 @@ export const AppProvider = ({ children }) => {
 	const [weatherData, setWeatherData] = useState({});
 	const [hourlyData, setHourlyData] = useState({});
 	const [dailyData, setDailyData] = useState({});
+	const [alertData, setAlertData] = useState({});
 
 	useEffect(() => {
 		if (navigator.geolocation) {
@@ -93,7 +94,28 @@ export const AppProvider = ({ children }) => {
 					console.log(dailyData.properties); // Log fetched hourly data
 					return dailyData.properties;
 				});
-				return Promise.all([fetchHourly, fetchDaily]);
+				const fetchAlerts = fetch(`https://api.weather.gov/alerts/active?point=${latitude},${longitude}`)
+					.then((res) => res.json())
+					.then((data) => {
+						setAlertData(data);
+						return data.features;
+					}).then((features) => {
+						if (features.length > 0) {
+							const alertPropertiesList = features.map((feature) => feature.properties);
+							return alertPropertiesList;
+						} else {
+							throw new Error('No alerts available');
+						}
+					})
+					.then((alertPropertiesList) => {
+						setAlertData(alertPropertiesList);
+						console.log(alertPropertiesList); // Log fetched hourly data
+						return alertPropertiesList;
+					})
+					.catch((error) => {
+						console.error('Error: ', error.message);
+					});
+				return Promise.all([fetchHourly, fetchDaily, fetchAlerts]);
 		})
 		.catch((error) => console.error('Error fetching data:', error));
 	};
@@ -110,6 +132,7 @@ export const AppProvider = ({ children }) => {
 		weatherData,
 		hourlyData,
 		dailyData,
+		alertData,
 		setIsInitialFetchDone,
 		setUserLatitude,
 		setUserLongitude,
@@ -125,6 +148,7 @@ export const AppProvider = ({ children }) => {
 		onOptionSelect,
 		fetchWeatherData,
 		setDailyData,
+		setAlertData,
 	};
 
 	return <AppContext.Provider value={contextValues}>{children}</AppContext.Provider>;
