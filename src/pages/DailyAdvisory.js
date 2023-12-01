@@ -3,6 +3,9 @@ import { AppContext, AppProvider } from '../AppContext.js';
 import logo from '../resources/logodesigns.png';
 import background from '../resources/Daily_Advisory_new.jpg';
 import sunny from '../resources/sunny.png';
+import clear from '../resources/clear.png';
+import mostly_clear from '../resources/mostly_clear.png';
+import patchy_fog from '../resources/patchy_fog.png';
 import '../App.css';
 import DateTime from '../DateTime.js';
 import Navbar from '../components/Navbar-pages.js';
@@ -18,10 +21,9 @@ function DailyAdvisory() {
 		longitude,
 		onOptionSelect,
 		options,
-		hourlyData,
 		dailyData,
 		city,
-		alertData
+		alertData,
 	} = useContext(AppContext);
 
 	const [selectedHour, setSelectedHour] = useState('');
@@ -88,15 +90,40 @@ function DailyAdvisory() {
 					<DateTime></DateTime>
 				</div>
 				{<img src={logo} className="logo" alt="logo" />}
+				{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Sunny" ? (
+						<img src={sunny} alt="Sunny" className="sunny" />
+						) : (
+						null
+						)}
 
-			</div>
-			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Sunny" ? (
-				console.log("the conditional worked"),
-				<img src={sunny} alt="Sunny" className="sunny" />
+			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Clear" ? (
+				<img src={clear} alt="Clear" className="clear" />
+				) : (
+				null
+			)}
+
+			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Clear" ? (
+				<img src={mostly_clear} alt="Mostly Clear" className="mostly_clear" />
 			) : (
 				null
 			)}
 
+			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Sunny" ? (
+				<img src={mostly_sunny} alt="Mostly Sunny" className="mostly_sunny" />
+			) : (
+				null
+			)}
+
+			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Patchy Fog" ? (
+				<img src={patchy_fog} alt="Patchy Fog" className="patchy_fog" />
+			) : (
+				null
+			)}
+			
+
+
+			</div>
+			
 			<div>
 				{dailyData && dailyData.periods && dailyData.periods.length > 1 ? (
 					<div className="weather-info-container">
@@ -106,7 +133,7 @@ function DailyAdvisory() {
 						<div className="weather-box">
 							<p>Longitude: {longitude}</p>
 						</div>
-						<div className="weather-box">
+						<div className="city">
 							<p>City: {city}</p>
 						</div>
 						{selectedDay !== '' ? (
@@ -114,16 +141,39 @@ function DailyAdvisory() {
 								<div className="weather-box">
 									<p>Day: {dailyData.periods[selectedDay].name}</p>
 								</div>
-								<div className="weather-box">
+								<div className="temperature">
 									<p>Temperature: {dailyData.periods[selectedDay].temperature}°F</p>
 								</div>
-								<div className="weather-box">
-									<p>Event: {alertData.event}</p>
-								</div>
 
-								<div className="weather-box">
-									<p>As part of our commitment to keeping you informed about weather conditions,</p>
-									<p> we want to bring your attention to today's weather advisory.</p>
+								
+									<div className = "event">
+									<p>Advisory Type: {alertData[0].event}</p>
+									</div>
+							
+
+								
+									<div className = "headline">
+									<p>Timing: {alertData.headline}</p>
+									</div>
+								
+
+								
+									<div className = "description">
+									<p>Expected Condition: {alertData.description}</p>
+									</div>
+								
+
+								
+									<div className = "instruction">
+									<p>Safety Tips: {alertData.instruction}</p>
+									</div>
+							
+
+								<div className="message">
+									<p>As part of our commitment to keeping  </p>
+									<p>you informed about weather conditions,</p>
+									<p> we want to bring your attention to </p>
+										<p>today's weather advisory.</p>
 								</div>
 
 
