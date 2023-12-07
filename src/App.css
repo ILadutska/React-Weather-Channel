@@ -184,14 +184,14 @@
 
 .image-container .sunny {
   position: absolute;
-  top: 30px;
-  left: 80px;
+  top: 33.5%;
+  left: 76.5%;
 }
 
-.image-container .logo {
+.image-container .clear {
   position: absolute;
-  top: 30px;
-  left: 80px;
+  top: 33.5%;
+  left: 76.5%;
 }
 
 .image-container .mostly_clear {
@@ -199,6 +199,32 @@
   top: 33.5%;
   left: 76.5%;
 }
+
+.image-container .patchy_fog {
+  position: absolute;
+  top: 33.5%;
+  left: 76.5%;
+}
+
+.image-container .chance_rain {
+  position: absolute;
+  top: 33.5%;
+  left: 76.5%;
+}
+
+.image-container .mostly_sunny {
+  position: absolute;
+  top: 33.5%;
+  left: 76.5%;
+}
+
+.image-container .mostly_cloudy {
+  position: absolute;
+  top: 33.5%;
+  left: 76.5%;
+}
+
+
 
 .search-container {
   position: absolute;

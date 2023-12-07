@@ -6,6 +6,9 @@ import sunny from '../resources/sunny.png';
 import clear from '../resources/clear.png';
 import mostly_clear from '../resources/mostly_clear.png';
 import patchy_fog from '../resources/patchy_fog.png';
+import chance_rain from '../resources/patchy_drizzle.jpg';
+import mostly_sunny from '../resources/mostly_sunny.png';
+import mostly_cloudy from '../resources/mostly_cloudy.jpg';
 import '../App.css';
 import DateTime from '../DateTime.js';
 import Navbar from '../components/Navbar-pages.js';
@@ -108,14 +111,28 @@ function DailyAdvisory() {
 				null
 			)}
 
+			
+
+			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Patchy Fog" ? (
+				<img src={patchy_fog} alt="Patchy Fog" className="patchy_fog" />
+			) : (
+				null
+			)}
+
+			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Chance Rain" ? (
+				<img src={chance_rain} alt="Chance rain" className="chance_rain" />
+			) : (
+				null
+			)}
+			
 			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Sunny" ? (
 				<img src={mostly_sunny} alt="Mostly Sunny" className="mostly_sunny" />
 			) : (
 				null
 			)}
 
-			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Patchy Fog" ? (
-				<img src={patchy_fog} alt="Patchy Fog" className="patchy_fog" />
+			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Cloudy" ? (
+				<img src={mostly_cloudy} alt="Mostly Cloudy" className="mostly_cloudy" />
 			) : (
 				null
 			)}
@@ -147,7 +164,7 @@ function DailyAdvisory() {
 
 								
 									<div className = "event">
-									<p>Advisory Type: {alertData[0].event}</p>
+									<p>Advisory Type: {alertData.title}</p>
 									</div>
 							
 
