@@ -97,17 +97,14 @@ function App() {
       <div>
         {hourlyData && hourlyData.periods && hourlyData.periods.length > 1 ? (
           <div className="weather-info-container">
-            <div className="weather-box">
-              <p>Latitude: {latitude}</p>
-            </div>
-            <div className="weather-box">
-              <p>Longitude: {longitude}</p>
-            </div>
-            <div className="weather-box">
+            <div className="city">
               <p>City: {city}</p>
             </div>
+            <div className="latlon">
+              <p>LAT: {latitude} LON: {longitude}</p>
+            </div>
             {selectedHour !== '' ? (
-              <>
+              <div className="weatherrundown">
               <div className="weather-box">
                 <p>Hour: {selectedHour}</p>
               </div>
@@ -116,30 +113,44 @@ function App() {
               </div>
 
               <div className="weather-box">
-                <p>Wind Speed: {hourlyData.periods[selectedHour].windSpeed}</p>
+                <p>Precipitation: {hourlyData.periods[selectedHour].probabilityOfPrecipitation.value}%</p>
               </div>
 
+              <div className="weather-box">
+                <p>Wind Speed: {hourlyData.periods[selectedHour].windSpeed}</p>
+              </div>
+              <div className="weather-box">
+                <p>Wind Direction: {hourlyData.periods[selectedHour].windDirection}</p>
+              </div>
               <div className="weather-box">
                 <p>Humidity: {hourlyData.periods[selectedHour].relativeHumidity.value}%</p>
               </div>
-            </>
+            </div>
             ) : selectedDay !== '' ? (
-              <>
-              <div className="weather-box">
-                <p>Day: {dailyData.periods[selectedDay].name}</p>
-              </div>
-              <div className="weather-box">
-                <p>Temperature: {dailyData.periods[selectedDay].temperature}°F</p>
-              </div>
+              <div className="weatherrundown">
+                <div className="weather-box">
+                  <p>Day: {dailyData.periods[selectedDay].name}</p>
+                </div>
+                <div className="weather-box">
+                  <p>Temperature: {dailyData.periods[selectedDay].temperature}°F</p>
+                </div>
 
-              <div className="weather-box">
-                <p>Wind Speed: {dailyData.periods[selectedDay].windSpeed}</p>
-              </div>
+                <div className="weather-box">
+                  <p>Precipitation: {dailyData.periods[selectedDay].probabilityOfPrecipitation.value}%</p>
+                </div>
 
-              <div className="weather-box">
-                <p>Humidity: {dailyData.periods[selectedDay].relativeHumidity.value}%</p>
+                <div className="weather-box">
+                  <p>Wind Speed: {dailyData.periods[selectedDay].windSpeed}</p>
+                </div>
+
+                <div className="weather-box">
+                  <p>Wind Direction: {dailyData.periods[selectedDay].windDirection}</p>
+                </div>
+
+                <div className="weather-box">
+                  <p>Humidity: {dailyData.periods[selectedDay].relativeHumidity.value}%</p>
+                </div>
               </div>
-            </>
             ) : null}
            
           </div>
