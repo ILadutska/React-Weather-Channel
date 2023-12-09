@@ -161,34 +161,44 @@ function DailyAdvisory() {
 								<div className="temperature">
 									<p>Temperature: {dailyData.periods[selectedDay].temperature}°F</p>
 								</div>
-							
 
+									
+									{alertData[0] ? (
+										<>
+											<div className = "headline">
+												<p>Alert: {alertData[0].headline}</p>
+											</div>
+									
+											<div className = "description">
+												<p>Expected Condition: {alertData[0].description}</p>
+											</div>
 								
-									<div className = "headline">
-									<p>Alert: {alertData[0].headline}</p>
-									</div>
+											<div className = "instruction">
+												<p>Safety Tips: {alertData[0].instruction}</p>
+											</div>
 								
-
+											<div className="message">
+												<p>As part of our commitment to keeping  </p>
+												<p>you informed about weather conditions,</p>
+												<p> we want to bring your attention to </p>
+												<p>today's weather advisory.</p>
+											</div>
+										</>
 								
-									<div className = "description">
-									<p>Expected Condition: {alertData[0].description}</p>
-									</div>
-								
+									): (
+										<>
+											<div className = "description">
+												<p>There are no advisories at this time.</p>
+											</div>
 
-								
-									<div className = "instruction">
-									<p>Safety Tips: {alertData[0].instruction}</p>
-									</div>
-							
-
-								<div className="message">
-									<p>As part of our commitment to keeping  </p>
-									<p>you informed about weather conditions,</p>
-									<p> we want to bring your attention to </p>
-										<p>today's weather advisory.</p>
-								</div>
-
-
+											<div className="message">
+												<p>As part of our commitment to keeping  </p>
+												<p>you informed about weather conditions,</p>
+												<p> we want to bring your attention to </p>
+												<p>today's weather advisory.</p>
+											</div>
+										</>
+									)}
 							</>
 						) : null}
 
