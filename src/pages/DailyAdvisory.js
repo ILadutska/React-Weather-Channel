@@ -161,28 +161,23 @@ function DailyAdvisory() {
 								<div className="temperature">
 									<p>Temperature: {dailyData.periods[selectedDay].temperature}°F</p>
 								</div>
-
-								
-									<div className = "event">
-									<p>Advisory Type: {alertData.title}</p>
-									</div>
 							
 
 								
 									<div className = "headline">
-									<p>Timing: {alertData.headline}</p>
+									<p>Alert: {alertData[0].headline}</p>
 									</div>
 								
 
 								
 									<div className = "description">
-									<p>Expected Condition: {alertData.description}</p>
+									<p>Expected Condition: {alertData[0].description}</p>
 									</div>
 								
 
 								
 									<div className = "instruction">
-									<p>Safety Tips: {alertData.instruction}</p>
+									<p>Safety Tips: {alertData[0].instruction}</p>
 									</div>
 							
 

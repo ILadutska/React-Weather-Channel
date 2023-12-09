@@ -322,7 +322,7 @@
   text-align: center;
   position: absolute;
   top: 60%;
-  left: 50%;
+  left: 30%;
 }
 
 .message{
@@ -333,7 +333,7 @@
   text-align: center;
   position: absolute;
   top: 60%;
-  left: 10%;
+  left: 5%;
 }
 
 .headline{
@@ -343,8 +343,8 @@
   border-radius: 5px;
   text-align: center;
   position: absolute;
-  top: 70%;
-  left: 50%;
+  top: 55%;
+  left: 30%;
 }
 
 .description{
@@ -354,8 +354,8 @@
   border-radius: 5px;
   text-align: center;
   position: absolute;
-  top: 80%;
-  left: 50%;
+  top: 65%;
+  left: 30%;
 }
 
 .instruction{
@@ -365,8 +365,8 @@
   border-radius: 5px;
   text-align: center;
   position: absolute;
-  top: 90%;
-  left: 50%;
+  top: 85%;
+  left: 30%;
 }
 
 .temperature{
