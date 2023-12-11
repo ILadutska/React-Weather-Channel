@@ -24,22 +24,22 @@ function App() {
     alertData
   } = useContext(AppContext);
 
-  const [selectedHour, setSelectedHour] = useState('');
-  const [selectedDay, setSelectedDay] = useState('');
+  const [selectedHour, setSelectedHour] = useState(0);
+  const [selectedDay, setSelectedDay] = useState(0);
 
-  const handleHourSelection = (numVal) =>{
+  const handleHourSelection = (numVal) => {
     setSelectedDay('');
-		console.log('Selected Hour:', numVal);
+    console.log('Selected Hour:', numVal);
     setSelectedHour(numVal);
     console.log('Updated: ', selectedHour);
-	};
+  };
 
-  const handleDaySelection = (numVal) =>{
+  const handleDaySelection = (numVal) => {
     setSelectedHour('');
-		console.log('Selected Day:', numVal);
+    console.log('Selected Day:', numVal);
     setSelectedDay(numVal);
     console.log('Updated: ', selectedDay);
-	};
+  };
 
   const homeStyle = {
     backgroundImage: `url(${background})`,
@@ -56,8 +56,8 @@ function App() {
   return (
     <div style={homeStyle}>
       <Navbar></Navbar>
-      <NavbarDays onDaySelect={handleDaySelection}/>
-      <NavbarHours onHourSelect={handleHourSelection}/>
+      <NavbarDays onDaySelect={handleDaySelection} />
+      <NavbarHours onHourSelect={handleHourSelection} />
       <div className="search-container">
         <div className="search-input">
           <input
@@ -105,27 +105,27 @@ function App() {
             </div>
             {selectedHour !== '' ? (
               <div className="weatherrundown">
-              <div className="weather-box">
-                <p>Hour: {selectedHour}</p>
-              </div>
-              <div className="weather-box">
-                <p>Temperature: {hourlyData.periods[selectedHour].temperature}°F</p>
-              </div>
+                <div className="weather-box">
+                  <p>Hour: {selectedHour}</p>
+                </div>
+                <div className="weather-box">
+                  <p>Temperature: {hourlyData.periods[selectedHour].temperature}°F</p>
+                </div>
 
-              <div className="weather-box">
-                <p>Precipitation: {hourlyData.periods[selectedHour].probabilityOfPrecipitation.value}%</p>
-              </div>
+                <div className="weather-box">
+                  <p>Precipitation: {hourlyData.periods[selectedHour].probabilityOfPrecipitation.value}%</p>
+                </div>
 
-              <div className="weather-box">
-                <p>Wind Speed: {hourlyData.periods[selectedHour].windSpeed}</p>
+                <div className="weather-box">
+                  <p>Wind Speed: {hourlyData.periods[selectedHour].windSpeed}</p>
+                </div>
+                <div className="weather-box">
+                  <p>Wind Direction: {hourlyData.periods[selectedHour].windDirection}</p>
+                </div>
+                <div className="weather-box">
+                  <p>Humidity: {hourlyData.periods[selectedHour].relativeHumidity.value}%</p>
+                </div>
               </div>
-              <div className="weather-box">
-                <p>Wind Direction: {hourlyData.periods[selectedHour].windDirection}</p>
-              </div>
-              <div className="weather-box">
-                <p>Humidity: {hourlyData.periods[selectedHour].relativeHumidity.value}%</p>
-              </div>
-            </div>
             ) : selectedDay !== '' ? (
               <div className="weatherrundown">
                 <div className="weather-box">
@@ -152,7 +152,7 @@ function App() {
                 </div>
               </div>
             ) : null}
-           
+
           </div>
         ) : (
           <p>Loading...</p>

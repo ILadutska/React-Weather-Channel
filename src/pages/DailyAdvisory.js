@@ -26,11 +26,11 @@ function DailyAdvisory() {
 		options,
 		dailyData,
 		city,
-		alertData,
+		alertData
 	} = useContext(AppContext);
 
-	const [selectedHour, setSelectedHour] = useState('');
-	const [selectedDay, setSelectedDay] = useState('');
+	const [selectedHour, setSelectedHour] = useState(0);
+	const [selectedDay, setSelectedDay] = useState(0);
 
 
 
@@ -94,53 +94,53 @@ function DailyAdvisory() {
 				</div>
 				{<img src={logo} className="logo" alt="logo" />}
 				{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Sunny" ? (
-						<img src={sunny} alt="Sunny" className="sunny" />
-						) : (
-						null
-						)}
-
-			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Clear" ? (
-				<img src={clear} alt="Clear" className="clear" />
+					<img src={sunny} alt="Sunny" className="sunny" />
 				) : (
-				null
-			)}
+					null
+				)}
 
-			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Clear" ? (
-				<img src={mostly_clear} alt="Mostly Clear" className="mostly_clear" />
-			) : (
-				null
-			)}
+				{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Clear" ? (
+					<img src={clear} alt="Clear" className="clear" />
+				) : (
+					null
+				)}
 
-			
+				{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Clear" ? (
+					<img src={mostly_clear} alt="Mostly Clear" className="mostly_clear" />
+				) : (
+					null
+				)}
 
-			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Patchy Fog" ? (
-				<img src={patchy_fog} alt="Patchy Fog" className="patchy_fog" />
-			) : (
-				null
-			)}
 
-			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Chance Rain" ? (
-				<img src={chance_rain} alt="Chance rain" className="chance_rain" />
-			) : (
-				null
-			)}
-			
-			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Sunny" ? (
-				<img src={mostly_sunny} alt="Mostly Sunny" className="mostly_sunny" />
-			) : (
-				null
-			)}
 
-			{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Cloudy" ? (
-				<img src={mostly_cloudy} alt="Mostly Cloudy" className="mostly_cloudy" />
-			) : (
-				null
-			)}
-			
+				{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Patchy Fog" ? (
+					<img src={patchy_fog} alt="Patchy Fog" className="patchy_fog" />
+				) : (
+					null
+				)}
+
+				{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Chance Rain" ? (
+					<img src={chance_rain} alt="Chance rain" className="chance_rain" />
+				) : (
+					null
+				)}
+
+				{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Sunny" ? (
+					<img src={mostly_sunny} alt="Mostly Sunny" className="mostly_sunny" />
+				) : (
+					null
+				)}
+
+				{selectedDay !== '' && dailyData.periods[selectedDay].shortForecast === "Mostly Cloudy" ? (
+					<img src={mostly_cloudy} alt="Mostly Cloudy" className="mostly_cloudy" />
+				) : (
+					null
+				)}
+
 
 
 			</div>
-			
+
 			<div>
 				{dailyData && dailyData.periods && dailyData.periods.length > 1 ? (
 					<div className="weather-info-container">
@@ -162,43 +162,43 @@ function DailyAdvisory() {
 									<p>Temperature: {dailyData.periods[selectedDay].temperature}°F</p>
 								</div>
 
-									
-									{alertData[0] ? (
-										<>
-											<div className = "headline">
-												<p>Alert: {alertData[0].headline}</p>
-											</div>
-									
-											<div className = "description">
-												<p>Expected Condition: {alertData[0].description}</p>
-											</div>
-								
-											<div className = "instruction">
-												<p>Safety Tips: {alertData[0].instruction}</p>
-											</div>
-								
-											<div className="message">
-												<p>As part of our commitment to keeping  </p>
-												<p>you informed about weather conditions,</p>
-												<p> we want to bring your attention to </p>
-												<p>today's weather advisory.</p>
-											</div>
-										</>
-								
-									): (
-										<>
-											<div className = "description">
-												<p>There are no advisories at this time.</p>
-											</div>
 
-											<div className="message">
-												<p>As part of our commitment to keeping  </p>
-												<p>you informed about weather conditions,</p>
-												<p> we want to bring your attention to </p>
-												<p>today's weather advisory.</p>
-											</div>
-										</>
-									)}
+								{alertData[0] ? (
+									<>
+										<div className="headline">
+											<p>Alert: {alertData[0].headline}</p>
+										</div>
+
+										<div className="description">
+											<p>Expected Condition: {alertData[0].description}</p>
+										</div>
+
+										<div className="instruction">
+											<p>Safety Tips: {alertData[0].instruction}</p>
+										</div>
+
+										<div className="message">
+											<p>As part of our commitment to keeping  </p>
+											<p>you informed about weather conditions,</p>
+											<p> we want to bring your attention to </p>
+											<p>today's weather advisory.</p>
+										</div>
+									</>
+
+								) : (
+									<>
+										<div className="description">
+											<p>There are no advisories at this time.</p>
+										</div>
+
+										<div className="message">
+											<p>As part of our commitment to keeping  </p>
+											<p>you informed about weather conditions,</p>
+											<p> we want to bring your attention to </p>
+											<p>today's weather advisory.</p>
+										</div>
+									</>
+								)}
 							</>
 						) : null}
 
