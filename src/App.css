@@ -314,6 +314,36 @@
   top: 30%;
 }
 
+.weatherrundown .temperature-icon {
+  position: absolute;
+  top: 21%;
+  left: -1%;
+}
+
+.weatherrundown .precipitation-icon {
+  position: absolute;
+  top: 38%;
+  left: 1.3%;
+}
+
+.weatherrundown .humidity-icon {
+  position: absolute;
+  top: 83%;
+  left: 0%;
+}
+
+.weatherrundown .wind-icon {
+  position: absolute;
+  top: 52%;
+  left: 0%;
+}
+
+.weatherrundown .winddirection-icon {
+  position: absolute;
+  top: 68%;
+  left: 0%;
+}
+
 .event{
   background-color: rgba(255, 255, 255, 0.2);
   padding: 10px;
@@ -392,18 +422,21 @@
   position: absolute;
   top: 35%;
   left: 73%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .weatherrundown{
   background-color: #435372;
-  padding: 10px;
+  padding-left: 43px;
+  padding-right: 43px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   margin: 10px;
   border-radius: 5px;
   text-align: center;
   position: absolute;
-  top: 40%;
-  left: 50%;
+  top: 35%;
+  left: 40%;
 }
 
